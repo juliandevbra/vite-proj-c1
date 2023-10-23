@@ -6,7 +6,7 @@ const Ravioles = () => {
     ]
   return (
     <div>
-        {ravioles.map(raviol => <Card plato={raviol}/>)}
+        {ravioles.map(raviol => <Card plato={raviol} key={raviol.id}/>)}
     </div>
   )
 }
