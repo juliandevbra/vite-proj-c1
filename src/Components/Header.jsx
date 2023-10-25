@@ -13,9 +13,9 @@ const Header = () => {
     }
 
     if(variable) {
-      styles.backgroundColor = 'black'
-    } else { //Si variable es null, false, '', 0 o undefined
       styles.backgroundColor = 'white'
+    } else { //Si variable es null, false, '', 0 o undefined
+      styles.backgroundColor = 'black'
     }
 
   return (

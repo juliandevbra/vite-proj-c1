@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import './Card.css'
+import '../styles/Card.css'
 
 const Card = ({plato, setPedidos}) => {
+  const { id, img, tipo, precio} = plato
   const [count, setCount] = useState(0)
+
   const sumar = () => {
-    setCount(count+1)
+    setCount((prev) => prev + 1)
   }
   const restar = () => {
     setCount(count-1)
@@ -12,11 +14,11 @@ const Card = ({plato, setPedidos}) => {
 
   return (
     <div className='card'>
-        <img src={plato.img} alt="" className='card-img'/>
-        <h3>{plato.tipo}</h3>
-        <h4>{plato.precio}</h4>
+        <img src={img} alt="" className='card-img'/>
+        <h3>{tipo}</h3>
+        <h4>{precio}</h4>
         <div className='buttons'>
-          <button onClick={restar}>-</button>
+          <button onClick={restar} disabled={count==0}>-</button>
           <h3>{count}</h3>
           <button onClick={() => setCount(count+1)}>+</button>
         </div>
